@@ -6,7 +6,7 @@ Here, you could find the principles to use an Inversion of control pattern to fa
 
 The basic idea behind is to get a Dependency Injector for managing the generic class loading without any knowledge of the concrete classes in fact. Please, find below the concept diagram for better understanding.
 
-![Concept diagram](https://github.com/dloira/dls_DynamicClassLoading/blob/master/concept_diagram.png)
+![Concept diagram](https://github.com/dloira/dls_DynamicClassLoading/blob/master/concept_diagram.jpg)
 
 ### Maven Multi Module Project
 
