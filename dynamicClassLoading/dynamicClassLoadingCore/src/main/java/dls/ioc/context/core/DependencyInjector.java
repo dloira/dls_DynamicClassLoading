@@ -1,36 +1,29 @@
 package dls.ioc.context.core;
 
-import java.util.HashMap;
-import java.util.Map;
+import dls.ioc.context.beans.Context;
+import dls.ioc.common.enums.MessagesEnum;
 
-import dls.ioc.context.beans.InstanceConfiguration;
- 
 /**
- * Clase principal del patrón DependencyInjector
- *
+ * Main class for pattern Dependency Injection.
+ * 
+ * @author <a href="diego.loira@gmail.com">Diego Loira</a>
+ * 
  */
 public class DependencyInjector {
- 
-       private Map<String,Object> instances = new HashMap<String, Object>();
-       private Map<String,InstanceConfiguration> instanceConfigurations = new HashMap<String, InstanceConfiguration>();
-      
-       private InstanceConfigurationReader instanceConfigurationReader = new InstanceConfigurationReader();
-       private InstanceConfigurator instanceConfigurator = new InstanceConfigurator();
-       private InstanceFactory instanceCreator = new InstanceFactory();
-      
-       public Map<String, Object> getInstances() {
-              return instances;
-       }
-       public Map<String, InstanceConfiguration> getInstanceConfigurations() {
-              return instanceConfigurations;
-       }
-      
-       /* 
-        * Método para ejecutar el patrón
-        */
-       public void execute() {
-              instanceConfigurationReader.readConfiguration(instanceConfigurations);
-              instanceCreator.createInstances(instanceConfigurations, instances);
-              instanceConfigurator.configureInstances(instanceConfigurations, instances);
-       }
+
+	private InstanceConfigurationReader instanceConfigurationReader = new InstanceConfigurationReader();
+	private ObjectFactory objectCreator = new ObjectFactory();
+	private InstanceConfigurator instanceConfigurator = new InstanceConfigurator();
+
+	/**
+	 * Executes the pattern loading the context with the configured beans.
+	 * 
+	 */
+	 public void execute(Context context) {
+		 System.out.println(MessagesEnum.KEY_MSG_LOADCONTEXT_STARTING.getValue());
+		 
+		 instanceConfigurationReader.readConfiguration(context.getInstanceConfigurations());
+		 objectCreator.createObjects(context.getInstanceConfigurations(), context.getInstances());
+		 instanceConfigurator.configureInstances(context.getInstanceConfigurations(), context.getInstances());
+	 }
 }

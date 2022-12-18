@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instances>
       <instance name="objectBeanPerson_1" type="dls.ioc.business.beans.BeanPersonImpl">
-            <parameter name="name" type="String" value="Diego Loira Sotelo" />
-            <parameter name="idCard" type="String" value="36152080J" />
+            <parameter name="name" type="String" value="Diego Loira" />
+            <parameter name="idCard" type="String" value="11111111A" />
       </instance>
       <instance name="objectBeanPerson_2" type="dls.ioc.business.beans.BeanPersonImpl">
-            <parameter name="name" type="String" value="Miguel Andrade Vázquez" />
-            <parameter name="idCard" type="String" value="22222222X" />
+            <parameter name="name" type="String" value="Tom Smith" />
+            <parameter name="idCard" type="String" value="22222222B" />
+      </instance>
+      <instance name="objectBeanPerson_3" type="dls.ioc.business.beans.BeanPersonImpl">
+            <parameter name="name" type="String" value="Kathering Evans" />
+            <parameter name="idCard" type="String" value="33333333B" />
       </instance>
       <instance name="objetBeanTransaction_A" type="dls.ioc.business.beans.BeanTransactionImpl">
             <parameter name="currency" type="String" value="Euro" />
             <parameter name="personalData" type="Object" value="objectBeanPerson_1" />
+      </instance>
+      <instance name="objetBeanTransaction_B" type="dls.ioc.business.beans.BeanTransactionImpl">
+            <parameter name="currency" type="String" value="Dolar" />
+            <parameter name="personalData" type="Object" value="objectBeanPerson_2" />
       </instance>
 </instances>
