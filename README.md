@@ -1,4 +1,4 @@
-# Java dynamic class Loading
+# Java dynamic class loading
 
 Here, you could find the principles to use an Inversion of control pattern to face a clean approach for dynamic class loading. Day by day, the teams apply this design pattern in hidden mode with frameworks like Spring in Java or Autofac in DotNet; however, it could be a great toolbox for achieve any challenge related with teams and architectural dependencias in a dynamic environment.
 
